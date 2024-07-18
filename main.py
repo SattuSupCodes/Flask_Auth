@@ -40,6 +40,10 @@ class User(db.Model):
     
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+    
+class Posts(db.Model):
+    id = db.Column(db.Integer , primary_key=True)
+    title = db.Column(db.String(10000))
         
     
 # routes
