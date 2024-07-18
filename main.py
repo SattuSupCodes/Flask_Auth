@@ -5,7 +5,7 @@ We also go live from here. '''
 from flask import Flask, render_template, request, redirect, session, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
-
+from datetime import *
 
 
 
@@ -46,6 +46,8 @@ class Posts(db.Model):
     title = db.Column(db.String(250))
     content = db.Column(db.Text)
     author = db.Column(db.String(250))
+    date_posts = db.Column(db.DateTime , default = datetime.uctnow)
+    slug = db.Column(db.String(250))
     
         
     
