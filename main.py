@@ -43,7 +43,10 @@ class User(db.Model):
     
 class Posts(db.Model):
     id = db.Column(db.Integer , primary_key=True)
-    title = db.Column(db.String(10000))
+    title = db.Column(db.String(250))
+    content = db.Column(db.Text)
+    author = db.Column(db.String(250))
+    
         
     
 # routes
